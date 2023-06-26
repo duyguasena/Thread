@@ -15,7 +15,7 @@ public class consumer extends Thread{
 		{
 			while(true)               //sürekli consume etmeye çalış
 			{
-				String data=producer.yarışmacı();
+				String data=producer.consume();
 				System.out.println(Thread.currentThread().getName()+"consume data \n"+data);
 				Thread.sleep(500);
 			}

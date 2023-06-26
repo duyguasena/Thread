@@ -13,8 +13,4 @@ public class producer_consumer_main {
 		consumerobj.setName("consumer");
 		consumerobj.start();
 	}
-	
-	
-		
-
 }

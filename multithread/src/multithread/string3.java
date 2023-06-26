@@ -10,34 +10,27 @@ public class string3 extends Thread{
 	private String message;
 	private List<Character> names;
 	
-	private static Lock lock=new ReentrantLock();
+	private static Lock lock=new ReentrantLock();                                   //kilitlemek için bunu eklemeliyiz
 	
 	public string3(String message,List<Character>names)
 	{
 		this.message=message;
 		this.names=names;
-		
 	}
 	
-	
 	@Override
-	public void run()   //start methodu ile çalıştır
+	public void run()                                                              //start methodu ile çalıştır
 	{
-		
-		
 		try 
 		{
-			lock.lock();	//kilitledim
-			System.out.println("names acquired by "+Thread.currentThread().getName());
+			lock.lock();	                                                       //kilitledim
+			System.out.println("Names acquired by "+Thread.currentThread().getName());//threadin adını aldık
 					for(int i=0;i<message.length();i++)
 					{
-						
-						names.add(message.charAt(i));                 //characterleri tek tek allisteye ekle 
+						names.add(message.charAt(i));                                //characterleri tek tek allisteye ekle 
 						System.out.print(message.charAt(i)+"-");
 						Thread.sleep(1000);
 					}
-				
-				
 		}
 		catch(Exception e)
 		{
@@ -46,14 +39,9 @@ public class string3 extends Thread{
 		
 		finally 
 		{
-			System.out.println("lock unloced by "+Thread.currentThread().getName());
-			lock.unlock(); //kilidi açtım
+			System.out.println("Lock unloced by "+Thread.currentThread().getName());
+			lock.unlock();                                                            //kilidi açtım
 		}
 	}
-		
-		
-
-	
-
 }
 

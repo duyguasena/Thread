@@ -10,13 +10,14 @@ public class threadpoolexample {
 		threadpoolexample e=new threadpoolexample();
 		e.startthreadpoolexample();
 
+		
 	}
 
 	
-	public void startthreadpoolexample()
+	public  void  startthreadpoolexample()
 	{
-		ExecutorService executorService=Executors.newFixedThreadPool(3);
-	                   //3 ü aynı anda çalışıyor
+		ExecutorService executorService=Executors.newFixedThreadPool(3);//aynı anda birden fazla threadin çalışmasını sağlıyor
+	                                                                //3 ü aynı anda çalışıyor
 		WorkTask workobj1=new WorkTask("task1");
 		WorkTask workobj2=new WorkTask("task2");
 		WorkTask workobj3=new WorkTask("task3");
@@ -29,6 +30,6 @@ public class threadpoolexample {
 		executorService.submit(workobj4);
 		executorService.submit(workobj5);
 		
-		executorService.shutdown();
+		executorService.shutdown();                      //executorservisi kapat
 	}
 }
